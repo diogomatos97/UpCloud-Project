@@ -43,9 +43,43 @@ namespace UpCloudLogic
                 }
             }
         }
-        public static void CreateIndependent()
+        public static void CreateIndependent(string name, string username, string password, string email, string artistName, string soundcloud, string spotify, string socials)
         {
+            using (var db = new ProjectContext())
+            {
+                bool alreadyExists = CheckIfExists(username);
+                if (alreadyExists == true)
+                {
+                    string existMessage = "Username is already taken";
+                }
+                else
+                {
+                    var newManager = new Manager()
+                    {
+                        Name = name.Trim(),
+                        Username = username.Trim().GetHashCode().ToString(),
+                        Password = password.Trim().GetHashCode().ToString(),
+                        Email = email.Trim(),
 
+
+                    };
+                    var newArtist = new Artist()
+                    {
+                        Name = name.Trim(),
+                        ManagerId = newManager.ManagerId,
+                        ArtistName = artistName,
+                        Soundcloud = soundcloud,
+                        Spotify = spotify,
+                        Socials = socials
+
+
+                    };
+
+                    db.Manager.Add(newManager);
+                    db.Artist.Add(newArtist);
+                    db.SaveChanges();
+                }
+            }
         }
         public static void CreateArtist(string name, int managerID, string artistName, string soundcloud, string spotify, string socials)
         {
@@ -166,3 +200,4 @@ namespace UpCloudLogic
             }
         }
     }
+}
