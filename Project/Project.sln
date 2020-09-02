@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project", "Project\Project.csproj", "{33ADA625-7DE5-4366-8E51-166823C37925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Project\Project.csproj", "{33ADA625-7DE5-4366-8E51-166823C37925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpCloudLogic", "UpCloudLogic\UpCloudLogic.csproj", "{C99F9001-CB06-4223-B74D-51511EDDAB54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{33ADA625-7DE5-4366-8E51-166823C37925}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33ADA625-7DE5-4366-8E51-166823C37925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33ADA625-7DE5-4366-8E51-166823C37925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
