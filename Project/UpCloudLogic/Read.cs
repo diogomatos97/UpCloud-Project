@@ -9,19 +9,20 @@ namespace UpCloudLogic
 {
     class Read
     {
-        public List<Artist> RetrieveArtists(int managerID)
+        public static List<Artist> RetrieveArtists(int managerID)
         {
             using (var db = new ProjectContext())
             {
                 return db.Artist.Where(a => a.ManagerId == managerID).ToList();
             }
         }
-        public List<Song> RetrieveSongs(int artistID)
+        public static List<Song> RetrieveSongs(int artistID)
         {
             using (var db = new ProjectContext())
             {
                 return db.Song.Where(a => a.ArtistId == artistID).ToList();
             }
         }
+
     }
 }
