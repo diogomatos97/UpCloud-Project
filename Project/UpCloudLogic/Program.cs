@@ -19,26 +19,34 @@ namespace UpCloudLogic
 
             using (var db = new ProjectContext())
             {
-
-
-                var newManager = new Manager()
+                bool alreadyExists = CheckIfExists(username);
+                if (alreadyExists == true)
                 {
-                    Name = name.Trim(),
-                    Username = username.Trim().GetHashCode().ToString(),
-                    Password = password.Trim().GetHashCode().ToString(),
-                    Email = email.Trim(),
-                    Label = label.Trim()
+                    string existMessage = "Username is already taken";
+                }
+                else
+                {
+                    var newManager = new Manager()
+                    {
+                        Name = name.Trim(),
+                        Username = username.Trim().GetHashCode().ToString(),
+                        Password = password.Trim().GetHashCode().ToString(),
+                        Email = email.Trim(),
+                        Label = label.Trim()
 
-                };
+                    };
 
 
-                db.Manager.Add(newManager);
+                    db.Manager.Add(newManager);
 
-                db.SaveChanges();
+                    db.SaveChanges();
+                }
             }
+        }
+        public static void CreateIndependent()
+        {
 
         }
-
         public static void CreateArtist(string name, int managerID, string artistName, string soundcloud, string spotify, string socials)
         {
             using (var db = new ProjectContext())
@@ -141,5 +149,20 @@ namespace UpCloudLogic
                 db.Artist.Remove(currArtist);
             }
         }
+        public static bool CheckIfExists(string username)
+        {
+            using (var db = new ProjectContext())
+            {
+                var currArtist = db.Manager.Where(m => m.Username == username).Count();
+                if (currArtist != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+        }
     }
-}
