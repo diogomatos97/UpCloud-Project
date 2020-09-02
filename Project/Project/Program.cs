@@ -11,7 +11,7 @@ namespace Project
                 var independentCheck = from m in db.Manager.AsQueryable()
                                        join a in db.Artist on m.Name equals a.Name
                                        select new { m.ManagerId, a.ArtistId };
-                Console.WriteLine(independentCheck.ToString());
+
             }
         }
     }

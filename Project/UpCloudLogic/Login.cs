@@ -8,7 +8,31 @@ namespace UpCloudLogic
 {
     class Login
     {
-        public int GetInfo(string username, string password)
+        public object GetInfo(string username, string password)
+        {
+            using (var db = new ProjectContext())
+            {
+                try
+                {
+                    var mngID = GetID(username, password);
+                    var artistID = IsIndependent(db.Manager.Where(m => m.ManagerId == mngID).FirstOrDefault().Name);
+                    if (artistID != 0)
+                    {
+                        return Read.RetrieveSongs(artistID);
+                    }
+                    else
+                    {
+                        return Read.RetrieveArtists(mngID);
+                    }
+                }
+                catch (Exception e)
+                {
+                    return e;
+                }
+
+            }
+        }
+        public int GetID(string username, string password)
         {
             using (var db = new ProjectContext())
             {
@@ -45,22 +69,23 @@ namespace UpCloudLogic
             }
 
         }
-        public bool IsIndependent(string name)
+        public int IsIndependent(string name)
         {
 
             using (var db = new ProjectContext())
             {
                 var independentCheck = from m in db.Manager
                                        join a in db.Artist on m.Name equals a.Name
+                                       where m.Name == name
                                        select new { m.ManagerId, a.ArtistId };
 
                 if (independentCheck.Count() == 1)
                 {
-                    return true;
+                    return independentCheck.FirstOrDefault().ArtistId;
                 }
                 else
                 {
-                    return false;
+                    return 0;
                 }
             }
 
