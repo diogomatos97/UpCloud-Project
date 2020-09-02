@@ -1,4 +1,5 @@
-﻿using Project;
+﻿using Microsoft.EntityFrameworkCore;
+using Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -198,6 +199,20 @@ namespace UpCloudLogic
                 }
 
             }
+
+        }
+        public bool IsIndependent(string name)
+        {
+
+            using (var db = new ProjectContext())
+            {
+                var independentCheck = from m in db.Manager
+                                       join a in db.Artist on m.Name equals a.Name
+                                       select new { m.ManagerId, a.ArtistId };
+
+            }
+            return true;
         }
     }
+
 }
