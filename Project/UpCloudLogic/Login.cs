@@ -8,10 +8,22 @@ namespace UpCloudLogic
 {
     class Login
     {
-        public static int GetInfo(string username, string password)
+        public int GetInfo(string username, string password)
         {
+            using (var db = new ProjectContext())
+            {
 
-
+                bool status = LoginCheck(username, password);
+                if (status == true)
+                {
+                    var getInfo = db.Manager.Where(c => c.Username == username.GetHashCode().ToString() && c.Password == password.GetHashCode().ToString()).FirstOrDefault();
+                    return getInfo.ManagerId;
+                }
+                else
+                {
+                    throw new Exception("The details provided are not correct!");
+                }
+            }
         }
         public bool LoginCheck(string username, string password)
         {
