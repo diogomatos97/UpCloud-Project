@@ -8,6 +8,11 @@ namespace UpCloudLogic
 {
     class Login
     {
+        public static int GetInfo(string username, string password)
+        {
+
+
+        }
         public bool LoginCheck(string username, string password)
         {
             using (var db = new ProjectContext())
