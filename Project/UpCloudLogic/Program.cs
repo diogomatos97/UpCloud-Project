@@ -82,5 +82,64 @@ namespace UpCloudLogic
                 db.SaveChanges();
             }
         }
+        public static void UpdateArtist(int artistID, string name, string artistName, string soundcloud, string spotify, string socials)
+        {
+            using (var db = new ProjectContext())
+            {
+                var currArtist = db.Artist.Where(a => a.ArtistId == artistID).FirstOrDefault();
+
+                currArtist.Name = name.Trim();
+                currArtist.ArtistName = artistName;
+                currArtist.Soundcloud = soundcloud;
+                currArtist.Spotify = spotify;
+                currArtist.Socials = socials;
+
+
+                db.Artist.Update(currArtist);
+
+                db.SaveChanges();
+            }
+        }
+        public static void UpdateSong(int songID, string name, string genre, string soundcloudURL, string spotifyURL, string songFile)
+        {
+            using (var db = new ProjectContext())
+            {
+                var currSong = db.Song.Where(s => s.SongId == songID).FirstOrDefault();
+
+                currSong.Name = name.Trim();
+                currSong.Genre = genre;
+                currSong.SoundcloudUrl = soundcloudURL;
+                currSong.SpotifyUrl = spotifyURL;
+                currSong.Status = spotifyURL != "" | soundcloudURL != "" ? "Published" : "Not Published";
+
+
+                db.Song.Update(currSong);
+
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteSong(int songID)
+        {
+            using (var db = new ProjectContext())
+            {
+                var currSong = db.Song.Where(s => s.SongId == songID).FirstOrDefault();
+
+                db.Song.Remove(currSong);
+            }
+        }
+        public static void DeleteArtist(int artistID)
+        {
+            using (var db = new ProjectContext())
+            {
+                var currArtist = db.Artist.Where(a => a.ArtistId == artistID).FirstOrDefault();
+                var songs = db.Song.Where(s => s.ArtistId == currArtist.ArtistId);
+                foreach (var item in songs)
+                {
+                    db.Song.Remove(item);
+                }
+                db.Artist.Remove(currArtist);
+            }
+        }
     }
 }
