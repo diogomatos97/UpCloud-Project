@@ -13,9 +13,9 @@ namespace UpCloudLogic
             //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
             //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
             //CreateArtist("Diogo", 1, "SKALL", "soundcloud.com", "Spotify.com", "@Skullcrap");
-            CreateSong("Rain", 1, "Lo-fi", "soundcloud.com/rain", "", "");
+            //CreateSong("Rain", 1, "Lo-fi", "soundcloud.com/rain", "", "");
         }
-        public static void CreateManager(string name, string username, string password, string email, string label)
+        public void CreateManager(string name, string username, string password, string email, string label)
         {
 
             using (var db = new ProjectContext())
@@ -44,7 +44,36 @@ namespace UpCloudLogic
                 }
             }
         }
-        public static void CreateIndependent(string name, string username, string password, string email, string artistName, string soundcloud, string spotify, string socials)
+        public void CreateManager(string name, string username, string password, string email)
+        {
+
+            using (var db = new ProjectContext())
+            {
+                bool alreadyExists = CheckIfExists(username);
+                if (alreadyExists == true)
+                {
+                    string existMessage = "Username is already taken";
+                }
+                else
+                {
+                    var newManager = new Manager()
+                    {
+                        Name = name.Trim(),
+                        Username = username.Trim().GetHashCode().ToString(),
+                        Password = password.Trim().GetHashCode().ToString(),
+                        Email = email.Trim()
+
+
+                    };
+
+
+                    db.Manager.Add(newManager);
+
+                    db.SaveChanges();
+                }
+            }
+        }
+        public void CreateIndependent(string name, string username, string password, string email, string artistName, string soundcloud, string spotify, string socials)
         {
             using (var db = new ProjectContext())
             {
@@ -82,7 +111,7 @@ namespace UpCloudLogic
                 }
             }
         }
-        public static void CreateArtist(string name, int managerID, string artistName, string soundcloud, string spotify, string socials)
+        public void CreateArtist(string name, int managerID, string artistName, string soundcloud, string spotify, string socials)
         {
             using (var db = new ProjectContext())
             {
@@ -103,7 +132,7 @@ namespace UpCloudLogic
                 db.SaveChanges();
             }
         }
-        public static void CreateSong(string name, int artistID, string genre, string soundcloudURL, string spotifyURL, string songFile)
+        public void CreateSong(string name, int artistID, string genre, string soundcloudURL, string spotifyURL, string songFile)
         {
             using (var db = new ProjectContext())
             {
@@ -125,7 +154,7 @@ namespace UpCloudLogic
                 db.SaveChanges();
             }
         }
-        public static void UpdateArtist(int artistID, string name, string artistName, string soundcloud, string spotify, string socials)
+        public void UpdateArtist(int artistID, string name, string artistName, string soundcloud, string spotify, string socials)
         {
             using (var db = new ProjectContext())
             {
@@ -143,7 +172,7 @@ namespace UpCloudLogic
                 db.SaveChanges();
             }
         }
-        public static void UpdateSong(int songID, string name, string genre, string soundcloudURL, string spotifyURL, string songFile)
+        public void UpdateSong(int songID, string name, string genre, string soundcloudURL, string spotifyURL, string songFile)
         {
             using (var db = new ProjectContext())
             {
@@ -162,7 +191,7 @@ namespace UpCloudLogic
             }
         }
 
-        public static void DeleteSong(int songID)
+        public void DeleteSong(int songID)
         {
             using (var db = new ProjectContext())
             {
@@ -171,7 +200,7 @@ namespace UpCloudLogic
                 db.Song.Remove(currSong);
             }
         }
-        public static void DeleteArtist(int artistID)
+        public void DeleteArtist(int artistID)
         {
             using (var db = new ProjectContext())
             {
@@ -184,7 +213,7 @@ namespace UpCloudLogic
                 db.Artist.Remove(currArtist);
             }
         }
-        public static bool CheckIfExists(string username)
+        public bool CheckIfExists(string username)
         {
             using (var db = new ProjectContext())
             {
