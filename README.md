@@ -13,6 +13,10 @@ For this sprint, 3 user stories have been marked as Done, which all correspond t
 
 ![](https://github.com/diogomatos97/Project/blob/WIP/images/erd.PNG)
 
+##### Business Rules Diagram
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/BusinessRules.png)
+
 #### Retrospective
 
 During the sprint, It has been noticed that, while preparing and planning the sprint, the number of tasks to be completed have been underestimated. This means that initially only 3 user stories have been selected from the product backlog when, in reality, 9 user stories have been passed to the in progress section. Also, this sprint has presented two blockers which were: not using the correct syntac for the creation of the database (using MySQL instead of SQL), which caused errors with the primary keys; not remembering how to use Linq method syntax for method join queries, where the solution was to use the query syntax. 
