@@ -1,11 +1,5 @@
 # UpCloud Development 
- SQL Project
-
-
-
-[TOC]
-
-
+[Sprint 1](#sprint-1)
 
 ### Sprint 1
 
