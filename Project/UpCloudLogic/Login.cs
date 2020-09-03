@@ -2,12 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 
 namespace UpCloudLogic
 {
+
     public class Login
     {
+        Read read = new Read();
         public object GetInfo(string username, string password)
         {
             using (var db = new ProjectContext())
@@ -18,11 +21,11 @@ namespace UpCloudLogic
                     var artistID = IsIndependent(db.Manager.Where(m => m.ManagerId == mngID).FirstOrDefault().Name);
                     if (artistID != 0)
                     {
-                        return Read.RetrieveSongs(artistID);
+                        return read.RetrieveSongs(artistID);
                     }
                     else
                     {
-                        return Read.RetrieveArtists(mngID);
+                        return read.RetrieveArtists(mngID);
                     }
                 }
                 catch (Exception e)

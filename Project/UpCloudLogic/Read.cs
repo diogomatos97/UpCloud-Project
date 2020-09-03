@@ -10,14 +10,14 @@ namespace UpCloudLogic
 {
     public class Read
     {
-        public static List<Artist> RetrieveArtists(int managerID)
+        public List<Artist> RetrieveArtists(int managerID)
         {
             using (var db = new ProjectContext())
             {
                 return db.Artist.Where(a => a.ManagerId == managerID).ToList();
             }
         }
-        public static List<Song> RetrieveSongs(int artistID)
+        public List<Song> RetrieveSongs(int artistID)
         {
             using (var db = new ProjectContext())
             {
@@ -25,14 +25,14 @@ namespace UpCloudLogic
             }
         }
 
-        public static List<Song> PublishedSongs(int artistID)
+        public List<Song> PublishedSongs(int artistID)
         {
             using (var db = new ProjectContext())
             {
                 return db.Song.Where(a => a.ArtistId == artistID && a.Status == "Published").ToList();
             }
         }
-        public static List<Song> UnpublishedSongs(int artistID)
+        public List<Song> UnpublishedSongs(int artistID)
         {
             using (var db = new ProjectContext())
             {
@@ -40,7 +40,7 @@ namespace UpCloudLogic
             }
         }
 
-        public static List<string> PublishedByManager(int managerID)
+        public List<string> PublishedByManager(int managerID)
         {
             using (var db = new ProjectContext())
             {
@@ -63,7 +63,7 @@ namespace UpCloudLogic
             }
 
         }
-        public static List<string> UnPublishedByManager(int managerID)
+        public List<string> UnPublishedByManager(int managerID)
         {
             using (var db = new ProjectContext())
             {

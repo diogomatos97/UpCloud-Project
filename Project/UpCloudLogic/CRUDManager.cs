@@ -93,10 +93,15 @@ namespace UpCloudLogic
 
 
                     };
+
+
+                    db.Manager.Add(newManager);
+                    db.SaveChanges();
+                    var getManagerID = db.Manager.Where(m => m.Username == username.GetHashCode().ToString()).FirstOrDefault();
                     var newArtist = new Artist()
                     {
                         Name = name.Trim(),
-                        ManagerId = newManager.ManagerId,
+                        ManagerId = getManagerID.ManagerId,
                         ArtistName = artistName,
                         Soundcloud = soundcloud,
                         Spotify = spotify,
@@ -104,8 +109,6 @@ namespace UpCloudLogic
 
 
                     };
-
-                    db.Manager.Add(newManager);
                     db.Artist.Add(newArtist);
                     db.SaveChanges();
                 }
@@ -217,7 +220,7 @@ namespace UpCloudLogic
         {
             using (var db = new ProjectContext())
             {
-                var currArtist = db.Manager.Where(m => m.Username == username).Count();
+                var currArtist = db.Manager.Where(m => m.Username == username.GetHashCode().ToString()).Count();
                 if (currArtist != 0)
                 {
                     return true;
