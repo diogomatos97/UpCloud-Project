@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace UpCloudLogic
 {
-    class Program
+    public class CRUDManager
     {
         static void Main(string[] args)
         {

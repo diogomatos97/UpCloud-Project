@@ -6,7 +6,7 @@ using System.Text;
 
 namespace UpCloudLogic
 {
-    class Login
+    public class Login
     {
         public object GetInfo(string username, string password)
         {
@@ -76,7 +76,7 @@ namespace UpCloudLogic
             {
                 var independentCheck = from m in db.Manager
                                        join a in db.Artist on m.Name equals a.Name
-                                       where m.Name == name
+                                       where a.Name == name
                                        select new { m.ManagerId, a.ArtistId };
 
                 if (independentCheck.Count() == 1)
