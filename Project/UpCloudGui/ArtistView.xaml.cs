@@ -41,6 +41,7 @@ namespace UpCloudGui
         public void ArtistList(string username, string password)
         {
             var login = new Login();
+
             LBArtist.ItemsSource = (List<Artist>)login.GetInfo(username, password);
 
 

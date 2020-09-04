@@ -77,7 +77,7 @@ namespace UpCloudLogic_Tests
 
                 db.SaveChanges();
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName..ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
 
                 var list = new List<Artist>();
                 list.Add(new Artist() { ArtistName = "SKALL", ManagerId = managerID.ManagerId, Name = "Diogo Matos", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" });

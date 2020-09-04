@@ -3,18 +3,64 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:UpCloudGui"
+      xmlns:local="clr-namespace:UpCloudGui" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Login">
 
-    <Grid Background="White">
-        <TextBox x:Name="uName" HorizontalAlignment="Left" Margin="166,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="69,78,0,0" VerticalAlignment="Top"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="69,149,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pass" HorizontalAlignment="Left" Margin="166,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="88,238,0,0" VerticalAlignment="Top" Height="34" RenderTransformOrigin="0.046,0" Width="103" Click="Button_Click"/>
-        <Button Content="Register as manager" HorizontalAlignment="Left" Margin="226,238,0,0" VerticalAlignment="Top" Width="90" Height="34" RenderTransformOrigin="0.993,0.176"/>
+    <Grid Margin="10,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+
+            <LinearGradientBrush >
+                <GradientStop Color="#FF224CA4" Offset="1"/>
+                <GradientStop Color="#FF00CD79" Offset="0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+        <materialDesign:Card Grid.RowSpan="2" Margin="152,74,152,28" Opacity="0.2">
+            <materialDesign:Card.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF224CA4" Offset="0"/>
+                    <GradientStop Color="#FF00CD79" Offset="1"/>
+                </LinearGradientBrush>
+            </materialDesign:Card.Background>
+        </materialDesign:Card>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+
+                <TextBox x:Name="uName" Width="109" HorizontalContentAlignment="Left"
+                 Text="Username" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="20" Opacity="0.6" TextAlignment="Center" Margin="170,0,0,0" Height="31"/>
+                <materialDesign:PackIcon Kind="Account" Foreground="White" Height="30" Width="24" Margin="12,0,0,0" Opacity="0.6"/>
+            </StackPanel>
+
+
+            <Border Background="White"  Opacity="0.6" Height="2" Width="138"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+
+                <PasswordBox x:Name="pass" Width="109" HorizontalContentAlignment="Left"
+                 Password="Password" Background="Transparent" BorderThickness="0" Foreground="White" FontSize="20" Opacity="0.6" Margin="170,0,0,0" Height="31"/>
+                <materialDesign:PackIcon Kind="Key" Foreground="White" Height="30" Width="24" Margin="12,0,0,0" Opacity="0.6"/>
+            </StackPanel>
+
+
+            <Border Background="White"  Opacity="0.6" Height="2" Width="138"/>
+
+
+        </StackPanel>
+
+
+
+        <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click"
+    Margin="206,116,206,85" Grid.Row="1" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" >
+            Login
+        </Button>
 
     </Grid>
 </Page>

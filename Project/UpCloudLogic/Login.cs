@@ -93,7 +93,20 @@ namespace UpCloudLogic
             }
 
         }
+
+        public void Exists(string username, string password)
+        {
+            using (var db = new ProjectContext())
+            {
+                var login = db.Manager.Where(c => c.Username == username.ToString() && c.Password == password.ToString()).FirstOrDefault();
+                if (login == null)
+                {
+                    throw new Exception("AA");
+                }
+
+            }
+
+        }
+
     }
-
-
 }

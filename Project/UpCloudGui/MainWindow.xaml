@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UpCloudGui"
         mc:Ignorable="d"
-        Title="UpCloud" Height="350" Width="500" Source="LoginIn.xaml">
+        Title="UpCloud" Height="350" Width="500" Source="LoginIn.xaml" ShowsNavigationUI="False" WindowStyle="None" AllowsTransparency="True" Background="Transparent" ShowInTaskbar="True"  >
 
 </NavigationWindow>

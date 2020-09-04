@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UpCloudLogic;
 
 namespace UpCloudGui
 {
@@ -25,11 +26,31 @@ namespace UpCloudGui
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = uName.Text.Trim();
-            string password = pass.Text.Trim();
+
+
+
+            string username = "diogo97";
+            //string username = uName.Text.Trim();
+            string password = "diogo97";
+            //string password = pass.SecurePassword.ToString();
+
+            var login = new Login();
+
+            login.Exists(username, password);
             ArtistView artistView = new ArtistView(username, password);
             this.NavigationService.Navigate(artistView);
 
+
+            MessageBox.Show("Details are Incorrect!");
+
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
+
+
 }

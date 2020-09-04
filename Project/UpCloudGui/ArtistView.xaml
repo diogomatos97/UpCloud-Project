@@ -20,7 +20,7 @@
         <TextBox x:Name="TextSound" HorizontalAlignment="Left" Height="22" Margin="504,150,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
         <TextBox x:Name="TextSpo" HorizontalAlignment="Left" Height="22" Margin="504,203,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
         <TextBox x:Name="TextSocial" HorizontalAlignment="Left" Height="22" Margin="504,247,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <Button Content="Update Details&#xD;&#xA;" HorizontalAlignment="Left" Height="43" Margin="519,293,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click"/>
+        <Button Content="Update Details&#xD;&#xA;" HorizontalAlignment="Left" Height="43" Margin="519,293,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click" />
 
     </Grid>
 </Page>

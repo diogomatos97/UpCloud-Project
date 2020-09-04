@@ -33,7 +33,6 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\UpCloudGui.csproj.CoreCompileInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\UpCloudGui.csproj.CopyComplete
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\UpCloudLogic.exe
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\Project.exe
@@ -64,3 +63,7 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\LoginIn.g.cs
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\ArtistView.baml
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\LoginIn.baml
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\UpCloudGui.csproj.CoreCompileInputs.cache
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\App.baml
