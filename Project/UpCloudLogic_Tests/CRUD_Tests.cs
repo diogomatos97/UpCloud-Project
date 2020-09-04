@@ -2,9 +2,11 @@
 using UpCloudLogic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+
 using Project;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace UpCloudLogic_Tests
 {
@@ -22,6 +24,31 @@ namespace UpCloudLogic_Tests
         {
             using (var db = new ProjectContext())
             {
+                var deletes = db.Song;
+                foreach (var item in deletes)
+                {
+                    db.Remove(item);
+
+                }
+                db.SaveChanges();
+                var deletea = db.Artist;
+                foreach (var item in deletea)
+                {
+                    db.Remove(item);
+
+                }
+                db.SaveChanges();
+                var deletem = db.Manager;
+                foreach (var item in deletem)
+                {
+                    db.Remove(item);
+
+                }
+                db.SaveChanges();
+                db.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Song',RESEED,0);");
+                db.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Artist',RESEED,0);");
+                db.Database.ExecuteSqlRaw("DBCC CHECKIDENT('Manager',RESEED,0);");
+
                 var newManager = new Manager()
                 {
                     Name = "Diogo Filipe",
@@ -40,25 +67,50 @@ namespace UpCloudLogic_Tests
         {
             using (var db = new ProjectContext())
             {
-                var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
-                var artist1 = db.Artist.Where(a => a.ManagerId == managerID.ManagerId).FirstOrDefault();
-                var song = db.Song.Where(s => s.Artist == artist1).FirstOrDefault();
-                if (song != null)
+                //    var uName = "Dmatos3";
+                //    var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                //    var artist1 = db.Artist.Where(a => a.ArtistId == 1).FirstOrDefault();
+                //    var song = db.Song.Where(s => s.ArtistId == 1);
+                //    if (song != null)
+                //    {
+                //        foreach (var item in song)
+                //        {
+                //            db.Remove(item);
+                //        }
+
+
+
+                //        db.SaveChanges();
+                //    }
+
+                //    db.Remove(artist1);
+
+
+                //    db.SaveChanges();
+                //    db.Remove(managerID);
+                //    db.SaveChanges();
+
+                var deletes = db.Song;
+                foreach (var item in deletes)
                 {
-                    db.Remove(song);
+                    db.Remove(item);
 
-
-                    db.SaveChanges();
                 }
-
-                db.Remove(artist1);
-
-
                 db.SaveChanges();
-                db.Remove(managerID);
-                db.SaveChanges();
+                var deletea = db.Artist;
+                foreach (var item in deletea)
+                {
+                    db.Remove(item);
 
+                }
+                db.SaveChanges();
+                var deletem = db.Manager;
+                foreach (var item in deletem)
+                {
+                    db.Remove(item);
+
+                }
+                db.SaveChanges();
             }
         }
         [Test]
@@ -82,17 +134,25 @@ namespace UpCloudLogic_Tests
         {
             using (var db = new ProjectContext())
             {
-                var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
-                var newArtist = new Artist() { ArtistName = "SKAL3L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
-                db.Artist.Add(newArtist);
+                //var uName = "Dmatos3";
+                //var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var newArtist = new Artist() { ArtistName = "SKAL3L", ManagerId = 1, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
+                db.Add(newArtist);
                 db.SaveChanges();
-                var uName2 = "SKAL3L";
-                var artistID = db.Artist.Where(m => m.ArtistName == uName2 && m.Manager == managerID).FirstOrDefault();
-                _crud.UpdateArtist(artistID.ArtistId, "Diogo", "", "soundcloud.com", "Spotify.com", "@Skullcrap");
 
-                var currArtist = db.Artist.Where(m => m.ArtistName == "").FirstOrDefault();
-                Assert.AreEqual(currArtist.ArtistName, "");
+
+                _crud.UpdateArtist(1, "Diogo", "", "soundcloud.com", "Spotify.com", "@Skullcrap");
+
+                var currArtist = db.Artist.Find(1);
+                //var currArtist = from a in db.Artist
+                //                 where a.ArtistId == 1
+                //                 select a;
+                //foreach (var item in currArtist)
+                //{   
+                //    Assert.AreEqual("", item.ArtistName);
+                //}
+
+                Assert.AreEqual("", currArtist.ArtistName);
             }
         }
         [Test]
@@ -120,19 +180,84 @@ namespace UpCloudLogic_Tests
             {
                 var uName = "Dmatos3";
                 var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
-                var newArtist = new Artist() { ArtistName = "SKAL3L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
+                var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
                 db.Artist.Add(newArtist);
                 db.SaveChanges();
-                var uName2 = "SKAL3L";
-                var artistID = db.Artist.Where(m => m.ArtistName == uName2).FirstOrDefault();
-                var newSong = new Song() { Name = "Rain", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "sound.com", SpotifyUrl = "", SongFile = "" };
+
+                var artistID = db.Artist.Where(m => m.ArtistName == "SKAL2L").FirstOrDefault();
+                var newSong = new Song() { Name = "Rain2", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "sound.com", SpotifyUrl = "", SongFile = "" };
                 db.Add(newSong);
                 db.SaveChanges();
-                var song = db.Song.Where(m => m.ArtistId == artistID.ArtistId && m.Name == "Rain").FirstOrDefault();
-                _crud.UpdateSong(song.SongId, "Not Rain", "Lo-fi", "", "", "");
-                var currsong = db.Song.Where(m => m.ArtistId == artistID.ArtistId && m.Name == "Not Rain").FirstOrDefault();
-                Assert.AreNotEqual(newSong.Name, currsong.Name);
+                var song = db.Song.Where(m => m.Name == "Rain2").FirstOrDefault();
+                _crud.UpdateSong(artistID.ArtistId, "Not Rain", "Lo-fi", "", "", "");
+                db.SaveChanges();
+                var currsong = db.Song.Where(s => s.ArtistId == 1);
+                foreach (var item in currsong)
+                {
+                    Assert.AreEqual("Not Rain", item.Name);
+                }
+
             }
         }
+        [Test]
+        public void GetUnPublished()
+        {
+            using (var db = new ProjectContext())
+            {
+
+                var uName = "Dmatos3";
+                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
+                db.Artist.Add(newArtist);
+                db.SaveChanges();
+
+                var artistID = db.Artist.Where(m => m.ArtistName == "SKAL2L").FirstOrDefault();
+                var newSong = new Song() { Name = "Rain2", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "sound.com", SpotifyUrl = "", SongFile = "", Status = "Published" };
+                db.Add(newSong);
+                db.SaveChanges();
+                var newSong2 = new Song() { Name = "Rain", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "", SpotifyUrl = "", SongFile = "", Status = "Not Published" };
+                db.Add(newSong2);
+                db.SaveChanges();
+
+                Read read = new Read();
+
+                var list = read.UnpublishedSongs(artistID.ArtistId);
+                Assert.AreEqual(list.Count, 1);
+
+
+            }
+
+        }
+
+
+        [Test]
+        public void GetPublished()
+        {
+            using (var db = new ProjectContext())
+            {
+
+                var uName = "Dmatos3";
+                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
+                db.Artist.Add(newArtist);
+                db.SaveChanges();
+
+                var artistID = db.Artist.Where(m => m.ArtistName == "SKAL2L").FirstOrDefault();
+                var newSong = new Song() { Name = "Rain2", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "sound.com", SpotifyUrl = "", SongFile = "", Status = "Published" };
+                db.Add(newSong);
+                db.SaveChanges();
+                var newSong2 = new Song() { Name = "Rain", ArtistId = artistID.ArtistId, Genre = "Lo-fi", SoundcloudUrl = "", SpotifyUrl = "", SongFile = "", Status = "Not Published" };
+                db.Add(newSong2);
+                db.SaveChanges();
+
+                Read read = new Read();
+
+                var list = read.PublishedSongs(1);
+                Assert.AreEqual(list.Count, 1);
+
+
+            }
+        }
+
     }
 }

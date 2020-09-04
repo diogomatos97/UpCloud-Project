@@ -3,6 +3,7 @@ using Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -16,7 +17,9 @@ namespace UpCloudLogic
             {
                 return db.Artist.Where(a => a.ManagerId == managerID).ToList();
             }
+
         }
+
         public List<Song> RetrieveSongs(int artistID)
         {
             using (var db = new ProjectContext())

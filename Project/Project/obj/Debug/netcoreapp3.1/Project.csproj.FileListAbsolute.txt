@@ -49,7 +49,7 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\Project.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\Project.pdb
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.csproj.CoreCompileInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.pdb
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.genruntimeconfig.cache
+C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.csproj.CoreCompileInputs.cache

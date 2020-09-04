@@ -50,8 +50,8 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\bin\Debug\netcoreap
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.csprojAssemblyReference.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.AssemblyInfoInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.AssemblyInfo.cs
-C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.csproj.CoreCompileInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.csproj.CopyComplete
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.pdb
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.genruntimeconfig.cache
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic\obj\Debug\netcoreapp3.1\UpCloudLogic.csproj.CoreCompileInputs.cache

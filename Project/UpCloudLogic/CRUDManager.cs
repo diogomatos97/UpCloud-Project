@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Project;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,12 @@ namespace UpCloudLogic
 {
     public class CRUDManager
     {
-        static void Main(string[] args)
-        {
-            //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
-            //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
-            //CreateArtist("Diogo", 1, "SKALL", "soundcloud.com", "Spotify.com", "@Skullcrap");
-            //CreateSong("Rain", 1, "Lo-fi", "soundcloud.com/rain", "", "");
-        }
+
+        //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
+        //CreateManager("Diogo", "diogo97", "diogo97", "diogo97@gmail.com", "label1");
+        //CreateArtist("Diogo", 1, "SKALL", "soundcloud.com", "Spotify.com", "@Skullcrap");
+        //CreateSong("Rain", 1, "Lo-fi", "soundcloud.com/rain", "", "");
+
         public void CreateManager(string name, string username, string password, string email, string label)
         {
 
@@ -140,6 +140,16 @@ namespace UpCloudLogic
             using (var db = new ProjectContext())
             {
                 var currArtist = db.Artist.Where(a => a.ArtistId == artistID).FirstOrDefault();
+                string status;
+                if (spotifyURL != "" | soundcloudURL != "")
+                {
+                    status = "Published";
+                }
+                else
+                {
+
+                    status = "Not Published";
+                }
                 var newSong = new Song()
                 {
                     Name = name,
@@ -148,7 +158,7 @@ namespace UpCloudLogic
                     SoundcloudUrl = soundcloudURL,
                     SpotifyUrl = spotifyURL,
                     SongFile = songFile,
-                    Status = spotifyURL != "" | soundcloudURL != "" ? "Published" : "Not Published"
+                    Status = status
 
 
                 };
@@ -161,37 +171,47 @@ namespace UpCloudLogic
         {
             using (var db = new ProjectContext())
             {
-                var currArtist = db.Artist.Where(a => a.ArtistId == artistID);
-                foreach (var item in currArtist)
-                {
+                //var currArtist = from a in db.Artist
+                //                 where a.ArtistId == artistID
+                //                 select a;
+
+                var currArtist = db.Artist.Find(artistID);
 
 
-                    item.Name = name.Trim();
-                    item.ArtistName = artistName.Trim();
-                    item.Soundcloud = soundcloud;
-                    item.Spotify = spotify;
-                    item.Socials = socials;
-                }
+
+
+                currArtist.Name = name.Trim();
+                currArtist.ArtistName = artistName.Trim();
+                currArtist.Soundcloud = soundcloud;
+                currArtist.Spotify = spotify;
+                currArtist.Socials = socials;
 
                 db.SaveChanges();
+
             }
         }
         public void UpdateSong(int songID, string name, string genre, string soundcloudURL, string spotifyURL, string songFile)
         {
             using (var db = new ProjectContext())
             {
-                var currSong = db.Song.Where(s => s.SongId == songID).FirstOrDefault();
+                var currSong = from s in db.Song
+                               where s.SongId == songID
+                               select s;
 
-                currSong.Name = name.Trim();
-                currSong.Genre = genre;
-                currSong.SoundcloudUrl = soundcloudURL;
-                currSong.SpotifyUrl = spotifyURL;
-                currSong.Status = spotifyURL != "" | soundcloudURL != "" ? "Published" : "Not Published";
+                foreach (var item in currSong)
+                {
+
+                    item.Name = name;
+                    item.Genre = genre;
+                    item.SoundcloudUrl = soundcloudURL;
+                    item.SpotifyUrl = spotifyURL;
+                    item.Status = spotifyURL != "" | soundcloudURL != "" ? "Published" : "Not Published";
 
 
+                }
 
-                db.Update(currSong);
                 db.SaveChanges();
+
             }
         }
 

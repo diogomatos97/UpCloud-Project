@@ -1,7 +1,6 @@
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.csprojAssemblyReference.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.AssemblyInfoInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.AssemblyInfo.cs
-C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.csproj.CoreCompileInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\bin\Debug\netcoreapp3.1\Project.exe
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\bin\Debug\netcoreapp3.1\UpCloudLogic.exe
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
@@ -139,3 +138,4 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\net
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.pdb
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.genruntimeconfig.cache
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudLogic_Tests\obj\Debug\netcoreapp3.1\UpCloudLogic_Tests.csproj.CoreCompileInputs.cache
