@@ -44,7 +44,7 @@ namespace UpCloudLogic
 
                 if (status == true)
                 {
-                    var getInfo = db.Manager.Where(c => c.Username == username.GetHashCode().ToString() && c.Password == password.GetHashCode().ToString()).FirstOrDefault();
+                    var getInfo = db.Manager.Where(c => c.Username == username.ToString() && c.Password == password.ToString()).FirstOrDefault();
                     return getInfo.ManagerId;
                 }
 
@@ -60,7 +60,7 @@ namespace UpCloudLogic
         {
             using (var db = new ProjectContext())
             {
-                var login = db.Manager.Where(c => c.Username == username.GetHashCode().ToString() && c.Password == password.GetHashCode().ToString()).FirstOrDefault();
+                var login = db.Manager.Where(c => c.Username == username.ToString() && c.Password == password.ToString()).FirstOrDefault();
                 if (login != null)
                 {
                     return true;

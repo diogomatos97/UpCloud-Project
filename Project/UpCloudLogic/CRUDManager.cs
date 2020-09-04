@@ -30,8 +30,8 @@ namespace UpCloudLogic
                     var newManager = new Manager()
                     {
                         Name = name.Trim(),
-                        Username = username.Trim().GetHashCode().ToString(),
-                        Password = password.Trim().GetHashCode().ToString(),
+                        Username = username.Trim(),
+                        Password = password.Trim(),
                         Email = email.Trim(),
                         Label = label.Trim()
 
@@ -59,8 +59,8 @@ namespace UpCloudLogic
                     var newManager = new Manager()
                     {
                         Name = name.Trim(),
-                        Username = username.Trim().GetHashCode().ToString(),
-                        Password = password.Trim().GetHashCode().ToString(),
+                        Username = username.Trim(),
+                        Password = password.Trim(),
                         Email = email.Trim()
 
 
@@ -87,8 +87,8 @@ namespace UpCloudLogic
                     var newManager = new Manager()
                     {
                         Name = name.Trim(),
-                        Username = username.Trim().GetHashCode().ToString(),
-                        Password = password.Trim().GetHashCode().ToString(),
+                        Username = username.Trim(),
+                        Password = password.Trim(),
                         Email = email.Trim(),
 
 
@@ -97,7 +97,7 @@ namespace UpCloudLogic
 
                     db.Manager.Add(newManager);
                     db.SaveChanges();
-                    var getManagerID = db.Manager.Where(m => m.Username == username.GetHashCode().ToString()).FirstOrDefault();
+                    var getManagerID = db.Manager.Where(m => m.Username == username.ToString()).FirstOrDefault();
                     var newArtist = new Artist()
                     {
                         Name = name.Trim(),
@@ -241,7 +241,7 @@ namespace UpCloudLogic
         {
             using (var db = new ProjectContext())
             {
-                var currArtist = db.Manager.Where(m => m.Username == username.GetHashCode().ToString()).Count();
+                var currArtist = db.Manager.Where(m => m.Username == username.ToString()).Count();
                 if (currArtist != 0)
                 {
                     return true;
@@ -254,7 +254,16 @@ namespace UpCloudLogic
             }
 
         }
-
+        public Artist SelectedArtist { get; set; }
+        public void SetSelectedArtist(object selectedItem)
+        {
+            SelectedArtist = (Artist)selectedItem;
+        }
+        public Song SelectedSong { get; set; }
+        public void SetSSelectedSong(object selectedItem)
+        {
+            SelectedSong = (Song)selectedItem;
+        }
     }
 
 }

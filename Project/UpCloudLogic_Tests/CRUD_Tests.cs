@@ -52,8 +52,8 @@ namespace UpCloudLogic_Tests
                 var newManager = new Manager()
                 {
                     Name = "Diogo Filipe",
-                    Username = "Dmatos3".GetHashCode().ToString(),
-                    Password = "Dmatos1".GetHashCode().ToString(),
+                    Username = "Dmatos3".ToString(),
+                    Password = "Dmatos1".ToString(),
                     Email = "dmatos@gmail.com"
                 };
                 db.Manager.Add(newManager);
@@ -120,12 +120,17 @@ namespace UpCloudLogic_Tests
             {
                 var count = db.Artist.Count();
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
                 _crud.CreateArtist("Diogo", managerID.ManagerId, "SKALL", "soundcloud.com", "Spotify.com", "@Skullcrap");
 
+                var selectedArtist = db.Artist.Find(1);
 
                 var countAfter = db.Artist.Count();
                 Assert.AreEqual(count + 1, countAfter);
+                Assert.AreEqual("Diogo", selectedArtist.Name);
+                Assert.AreEqual("SKALL", selectedArtist.ArtistName);
+                Assert.AreEqual("soundcloud.com", selectedArtist.Soundcloud);
+                Assert.AreEqual("Spotify.com", selectedArtist.Spotify);
 
             }
         }
@@ -161,7 +166,7 @@ namespace UpCloudLogic_Tests
             using (var db = new ProjectContext())
             {
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
                 var newArtist = new Artist() { ArtistName = "SKAL3L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
                 db.Artist.Add(newArtist);
                 db.SaveChanges();
@@ -179,7 +184,7 @@ namespace UpCloudLogic_Tests
             using (var db = new ProjectContext())
             {
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
                 var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
                 db.Artist.Add(newArtist);
                 db.SaveChanges();
@@ -206,7 +211,7 @@ namespace UpCloudLogic_Tests
             {
 
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
                 var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
                 db.Artist.Add(newArtist);
                 db.SaveChanges();
@@ -237,7 +242,7 @@ namespace UpCloudLogic_Tests
             {
 
                 var uName = "Dmatos3";
-                var managerID = db.Manager.Where(m => m.Username == uName.GetHashCode().ToString()).FirstOrDefault();
+                var managerID = db.Manager.Where(m => m.Username == uName.ToString()).FirstOrDefault();
                 var newArtist = new Artist() { ArtistName = "SKAL2L", ManagerId = managerID.ManagerId, Name = "Diogo", Soundcloud = "sound.com", Spotify = "spot.com", Socials = "@skallMusic" };
                 db.Artist.Add(newArtist);
                 db.SaveChanges();
