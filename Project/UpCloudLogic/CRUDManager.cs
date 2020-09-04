@@ -161,16 +161,17 @@ namespace UpCloudLogic
         {
             using (var db = new ProjectContext())
             {
-                var currArtist = db.Artist.Where(a => a.ArtistId == artistID).FirstOrDefault();
-
-                currArtist.Name = name.Trim();
-                currArtist.ArtistName = artistName;
-                currArtist.Soundcloud = soundcloud;
-                currArtist.Spotify = spotify;
-                currArtist.Socials = socials;
+                var currArtist = db.Artist.Where(a => a.ArtistId == artistID);
+                foreach (var item in currArtist)
+                {
 
 
-                db.Artist.Update(currArtist);
+                    item.Name = name.Trim();
+                    item.ArtistName = artistName.Trim();
+                    item.Soundcloud = soundcloud;
+                    item.Spotify = spotify;
+                    item.Socials = socials;
+                }
 
                 db.SaveChanges();
             }
@@ -188,8 +189,8 @@ namespace UpCloudLogic
                 currSong.Status = spotifyURL != "" | soundcloudURL != "" ? "Published" : "Not Published";
 
 
-                db.Song.Update(currSong);
 
+                db.Update(currSong);
                 db.SaveChanges();
             }
         }
