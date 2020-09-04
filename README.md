@@ -55,8 +55,8 @@ As to improve for following projects, I will plan more than 1 sprint to create u
 
 ##### Start of Sprint
 
-![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint1am.PNG)
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint2am.PNG)
 
 ##### End of Sprint
 
-![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint1pm.PNG)
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint2pm.PNG)
