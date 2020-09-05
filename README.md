@@ -3,6 +3,8 @@
 
 [Sprint 2](#sprint-2)
 
+[Sprint 3](#sprint-3)
+
 ### Sprint 1
 
 #### Goals
@@ -61,3 +63,30 @@ As to improve for following projects, I will plan more than 1 sprint to create u
 ##### End of Sprint
 
 ![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint2pm.PNG)
+
+### Sprint 3
+
+#### Goals
+
+The goal for this sprint is to finish creating the unit tests for the CRUD functionalities and start to develop the user interface.
+
+#### Review
+
+For this sprint, I have moved 2 user stories from the review tab to done, as all the acceptance criteria have been met and the tests have passed. During this sprint, I also started to develop a simple user interface to do manual testing on the login functionalities, and developing the pages where the content is shown, as to see if everything is working. Later on the day, I started to change the User Interface desing, as so it looks more appealing to the user.
+Regarding this sprint, I faced similar blockers to the pervious one as, when testing the entity framework, tests would sometimes not pass due to update conflicts. I have also not been able to get passing tests on my update functionalities as, although when manual tested the code works, the code does not seem to fetch the updated data when under tests.
+
+
+
+#### Retrospective
+
+As to improve on the following sprints, there are no new subjects I need to improve or approach in a different method, as this sprint was similar to the previous one. This means that the work done has beem almost identical, therefore no new problems have surfaced.
+
+#### Sprint Breakdown
+
+##### Start of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint2pm.PNG)
+
+##### End of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint3pm.PNG)
