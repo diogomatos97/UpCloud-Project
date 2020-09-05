@@ -21,7 +21,7 @@
 
             </LinearGradientBrush>
         </Grid.Background>
-        <materialDesign:Card Grid.RowSpan="2" Margin="152,74,152,28" Opacity="0.2">
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5" Grid.RowSpan="2" Margin="152,43,152,59" Opacity="0.2" >
             <materialDesign:Card.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF224CA4" Offset="0"/>
