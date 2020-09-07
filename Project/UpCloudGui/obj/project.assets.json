@@ -5767,6 +5767,7 @@
       "MaterialDesignColors >= 1.2.6",
       "MaterialDesignThemes >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Relational >= 3.1.7",
+      "Project >= 1.0.0",
       "UpCloudLogic >= 1.0.0"
     ]
   },
@@ -5796,6 +5797,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\Project\\Project.csproj": {
+              "projectPath": "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\Project\\Project.csproj"
+            },
             "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\UpCloudLogic\\UpCloudLogic.csproj": {
               "projectPath": "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\UpCloudLogic\\UpCloudLogic.csproj"
             }

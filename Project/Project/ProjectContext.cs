@@ -48,13 +48,9 @@ namespace Project
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Soundcloud)
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.Soundcloud).IsUnicode(false);
 
-                entity.Property(e => e.Spotify)
-                    .HasMaxLength(60)
-                    .IsUnicode(false);
+                entity.Property(e => e.Spotify).IsUnicode(false);
 
                 entity.HasOne(d => d.Manager)
                     .WithMany(p => p.Artist)
@@ -102,18 +98,14 @@ namespace Project
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.SongFile)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+                entity.Property(e => e.SongFile).IsUnicode(false);
 
                 entity.Property(e => e.SoundcloudUrl)
                     .HasColumnName("SoundcloudURL")
-                    .HasMaxLength(60)
                     .IsUnicode(false);
 
                 entity.Property(e => e.SpotifyUrl)
                     .HasColumnName("SpotifyURL")
-                    .HasMaxLength(60)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Status)

@@ -99,6 +99,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\Project\\Project.csproj": {
+                "projectPath": "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\Project\\Project.csproj"
+              },
               "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\UpCloudLogic\\UpCloudLogic.csproj": {
                 "projectPath": "C:\\Users\\Diogo\\Documents\\GitHub\\Project\\Project\\UpCloudLogic\\UpCloudLogic.csproj"
               }

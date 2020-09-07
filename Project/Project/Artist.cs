@@ -20,10 +20,9 @@ namespace Project
 
         public virtual Manager Manager { get; set; }
         public virtual ICollection<Song> Song { get; set; }
-
         public override string ToString()
         {
-            return $"{Name} - {ArtistName} ";
+            return $"{ArtistName} - {Socials}";
         }
     }
 }

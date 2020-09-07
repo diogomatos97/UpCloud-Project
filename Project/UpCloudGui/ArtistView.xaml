@@ -69,7 +69,7 @@
             <TextBox x:Name="TextSGenre" Height="30" Text="Genre" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSound" Height="30" Text="Soundcloud Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSpo" Height="30" Text="Spotify Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-            <TextBox x:Name="TextSFile" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" MouseDoubleClick="TextSFile_MouseDoubleClick" />
+            <TextBox x:Name="TextSFile" Height="30" Text="Song File" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" MouseDoubleClick="TextSFile_MouseDoubleClick" />
             <Label x:Name="TextSStatus" Height="30" Content="Status"  Width="133" RenderTransformOrigin="0.509,-0.203" IsEnabled="True"/>
             <StackPanel Orientation="Horizontal" Height="166">
                 <Button
