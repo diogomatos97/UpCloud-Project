@@ -20,6 +20,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="Music" Height="24" Width="31" Margin="99,15,0,0" Grid.Column="1" Foreground="White" Opacity="0.6" MouseDoubleClick="PackIcon_MouseDoubleClick" x:Name="musicIcon" Visibility="Hidden"/>
         <materialDesign:PackIcon Kind="HomeOutline" HorizontalAlignment="Right" Width="30" Foreground="White" Height="24" Margin="0,15,160,0" Opacity="0.6" Grid.Column="1" Name="BtnHomeArtist" Visibility="Hidden" MouseDoubleClick="BtnHomeArtist_MouseDoubleClick"/>
         <materialDesign:PackIcon Kind="Logout" HorizontalAlignment="Right" Width="30" Foreground="White" Height="24" Margin="0,15,160,0" Opacity="0.6" Grid.Column="1" Name="BtnLogOut" Visibility="Visible" MouseDoubleClick="BtnLogOut_MouseDoubleClick"/>
         <ListBox x:Name="LBArtist" HorizontalAlignment="Left" Height="211" Margin="171,34,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBArtist_SelectionChanged" Grid.Column="0
@@ -68,7 +69,7 @@
             <TextBox x:Name="TextSGenre" Height="30" Text="Genre" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSound" Height="30" Text="Soundcloud Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSpo" Height="30" Text="Spotify Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-            <TextBox x:Name="TextSFile" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" />
+            <TextBox x:Name="TextSFile" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" MouseDoubleClick="TextSFile_MouseDoubleClick" />
             <Label x:Name="TextSStatus" Height="30" Content="Status"  Width="133" RenderTransformOrigin="0.509,-0.203" IsEnabled="True"/>
             <StackPanel Orientation="Horizontal" Height="166">
                 <Button
@@ -79,6 +80,7 @@
 
             </StackPanel>
         </StackPanel>
+        <MediaElement Grid.Column="1" HorizontalAlignment="Left" Height="82" Margin="183,352,0,0" VerticalAlignment="Top" Width="100" x:Name="player"/>
 
     </Grid>
 </Page>

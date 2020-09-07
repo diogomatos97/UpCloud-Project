@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UpCloudLogic;
 using System.Linq;
+using Microsoft.Win32;
 
 namespace UpCloudGui
 {
@@ -88,6 +89,7 @@ namespace UpCloudGui
             if (LBSong.SelectedItem != null)
             {
                 BtnSUpdate.Visibility = Visibility.Visible;
+                musicIcon.Visibility = Visibility.Visible;
                 crud.SetSSelectedSong(LBSong.SelectedItem);
                 SongFields();
             }
@@ -218,6 +220,33 @@ namespace UpCloudGui
         {
             LoginIn login = new LoginIn();
             this.NavigationService.Navigate(login);
+        }
+
+        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (player.Source == new Uri(crud.SelectedSong.SongFile))
+            {
+                player.Stop();
+
+            }
+            else
+            {
+                player.LoadedBehavior = MediaState.Manual;
+                player.Source = new Uri(crud.SelectedSong.SongFile);
+                player.Play();
+            }
+        }
+
+        private void TextSFile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            bool? resposnse = openFileDialog.ShowDialog();
+
+            if (resposnse == true)
+            {
+                string filepath = openFileDialog.FileName;
+                TextSFile.Text = filepath;
+            }
         }
     }
 
