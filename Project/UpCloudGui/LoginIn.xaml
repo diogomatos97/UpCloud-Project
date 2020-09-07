@@ -53,14 +53,16 @@
         </StackPanel>
 
 
-
-        <Button
+        <StackPanel Orientation="Horizontal" Margin="63,65,78,38" Grid.Row="1">
+            <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click_1" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Register" Margin="100,0,0,0" />
+            <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
     Click="Button_Click"
-    Margin="206,116,206,85" Grid.Row="1" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" >
-            Login
-        </Button>
-
+    Margin="10,0,206,0" Grid.Row="1" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Login" />
+        </StackPanel>
     </Grid>
 </Page>

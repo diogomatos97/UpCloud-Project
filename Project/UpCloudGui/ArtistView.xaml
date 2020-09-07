@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:UpCloudGui"
+      xmlns:local="clr-namespace:UpCloudGui" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="500"
       Title="ArtistView">
@@ -20,6 +20,8 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="HomeOutline" HorizontalAlignment="Right" Width="30" Foreground="White" Height="24" Margin="0,15,160,0" Opacity="0.6" Grid.Column="1" Name="BtnHomeArtist" Visibility="Hidden" MouseDoubleClick="BtnHomeArtist_MouseDoubleClick"/>
+        <materialDesign:PackIcon Kind="Logout" HorizontalAlignment="Right" Width="30" Foreground="White" Height="24" Margin="0,15,160,0" Opacity="0.6" Grid.Column="1" Name="BtnLogOut" Visibility="Visible" MouseDoubleClick="BtnLogOut_MouseDoubleClick"/>
         <ListBox x:Name="LBArtist" HorizontalAlignment="Left" Height="211" Margin="171,34,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBArtist_SelectionChanged" Grid.Column="0
                  "/>
         <ListBox x:Name="LBSong" HorizontalAlignment="Left" Height="211" Margin="171,34,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBSong_SelectionChanged" Grid.Column="0

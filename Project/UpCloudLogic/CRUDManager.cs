@@ -80,7 +80,7 @@ namespace UpCloudLogic
                 bool alreadyExists = CheckIfExists(username);
                 if (alreadyExists == true)
                 {
-                    string existMessage = "Username is already taken";
+                    throw new Exception("Username is already taken");
                 }
                 else
                 {

@@ -133,7 +133,7 @@ namespace UpCloudGui
         }
         private void AddSong(object sender, RoutedEventArgs e)
         {
-            var artID = crud.SelectedSong.ArtistId;
+            var artID = crud.SelectedArtist.ArtistId;
             crud.CreateSong(TextSName.Text, (int)artID, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
             //this.NavigationService.Navigate(new ArtistView(user, pass));
             SongList((int)artID);
@@ -163,6 +163,9 @@ namespace UpCloudGui
             BtnSongs.Visibility = Visibility.Hidden;
             AFields.Visibility = Visibility.Hidden;
             SFields.Visibility = Visibility.Visible;
+            BtnLogOut.Visibility = Visibility.Hidden;
+            BtnHomeArtist.Visibility = Visibility.Visible;
+
             if (crud.SelectedArtist != null)
             {
                 int artistID = crud.SelectedArtist.ArtistId;
@@ -170,6 +173,16 @@ namespace UpCloudGui
             }
         }
 
+        private void BtnHomeArtist_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new ArtistView(user, pass));
+        }
+
+        private void BtnLogOut_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            LoginIn login = new LoginIn();
+            this.NavigationService.Navigate(login);
+        }
     }
 
 

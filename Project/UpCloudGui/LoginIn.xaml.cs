@@ -48,7 +48,8 @@ namespace UpCloudGui
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            RegisterView register = new RegisterView();
+            this.NavigationService.Navigate(register);
         }
     }
 

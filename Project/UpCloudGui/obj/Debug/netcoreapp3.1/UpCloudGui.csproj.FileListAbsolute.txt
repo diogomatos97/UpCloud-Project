@@ -67,3 +67,5 @@ C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\UpCloudGui.csproj.CoreCompileInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\RegisterView.g.cs
+C:\Users\Diogo\Documents\GitHub\Project\Project\UpCloudGui\obj\Debug\netcoreapp3.1\RegisterView.baml
