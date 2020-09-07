@@ -1,5 +1,4 @@
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\Project.exe
-C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.csprojAssemblyReference.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfoInputs.cache
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfo.cs
 C:\Users\Diogo\Documents\GitHub\Project\Project\Project\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll

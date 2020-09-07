@@ -60,9 +60,9 @@ namespace UpCloudGui
         }
         private void LBSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (LBArtist.SelectedItem != null)
+            if (LBSong.SelectedItem != null)
             {
-                crud.SetSSelectedSong(LBArtist.SelectedItem);
+                crud.SetSSelectedSong(LBSong.SelectedItem);
                 SongFields();
             }
         }
@@ -101,6 +101,22 @@ namespace UpCloudGui
 
         }
 
+        private void AddArtist(object sender, RoutedEventArgs e)
+        {
+            var mngID = crud.SelectedArtist.ManagerId;
+            crud.CreateArtist(TextName.Text,(int)mngID, TextArtistName.Text, TextSound.Text, TextSpo.Text, TextSocial.Text);
+            this.NavigationService.Navigate(new ArtistView(user, pass));
+
+
+        }
+        private void UpdateSong(object sender, RoutedEventArgs e)
+        {
+            var artID = crud.SelectedSong.SongId;
+            crud.UpdateSong(artID, TextSName.Text, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
+            this.NavigationService.Navigate(new ArtistView(user, pass));
+
+
+        }
         private void SongList(int artistID)
         {
             LBSong.ItemsSource = (List<Song>)read.RetrieveSongs(artistID);
@@ -109,13 +125,17 @@ namespace UpCloudGui
         }
         private void Song_Click(object sender, RoutedEventArgs e)
         {
+            LBArtist.Visibility = Visibility.Hidden;
+            LBSong.Visibility = Visibility.Visible;
             LArtist.Visibility = Visibility.Hidden;
             LSongs.Visibility = Visibility.Visible;
             BtnSongs.Visibility = Visibility.Hidden;
+            AFields.Visibility = Visibility.Hidden;
+            SFields.Visibility = Visibility.Visible;
             if (crud.SelectedArtist != null)
             {
-                int artistID = crud.SelectedArtist.ArtistId
-                   SongList(artistID);
+                int artistID = crud.SelectedArtist.ArtistId;
+                SongList(artistID);
             }
         }
 

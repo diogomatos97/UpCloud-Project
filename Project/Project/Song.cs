@@ -15,5 +15,9 @@ namespace Project
         public string SongFile { get; set; }
 
         public virtual Artist Artist { get; set; }
+        public override string ToString()
+        {
+            return $"{Name} - {Status} ";
+        }
     }
 }

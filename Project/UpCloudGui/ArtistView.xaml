@@ -46,7 +46,7 @@
             <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Add" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
+    Click="AddArtist" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Add" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
             <Button Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
     Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Delete" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
@@ -72,7 +72,7 @@
                 <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,80" />
+    Click="UpdateSong" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,80" />
 
 
             </StackPanel>
