@@ -222,6 +222,7 @@ namespace UpCloudLogic
                 var currSong = db.Song.Where(s => s.SongId == songID).FirstOrDefault();
 
                 db.Song.Remove(currSong);
+                db.SaveChanges();
             }
         }
         public void DeleteArtist(int artistID)
@@ -234,7 +235,10 @@ namespace UpCloudLogic
                 {
                     db.Song.Remove(item);
                 }
+                db.SaveChanges();
                 db.Artist.Remove(currArtist);
+                db.SaveChanges();
+
             }
         }
         public bool CheckIfExists(string username)

@@ -34,7 +34,7 @@
                 <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,19.5" />
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,19.5" Name="BtnAUpdate" Visibility="Hidden" />
                 <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
@@ -49,16 +49,16 @@
     Click="AddArtist" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Add" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
             <Button Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Delete" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    Click="DeleteArtist" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Delete" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Name="LSongs" Visibility="Hidden">
             <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Adds" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
+    Click="AddSong" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Adds" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
             <Button Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Deletes" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    Click="DeleteSong" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Deletes" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </StackPanel>
 
         <StackPanel Grid.Column="1" Margin="30,69,170,112" x:Name="SFields" Visibility="Hidden">
@@ -72,7 +72,7 @@
                 <Button
             Foreground="White"
     Style="{StaticResource MaterialDesignFlatButton}"
-    Click="UpdateSong" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,80" />
+    Click="UpdateSong" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,80" Visibility="Hidden"  Name="BtnSUpdate"/>
 
 
             </StackPanel>

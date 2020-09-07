@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using UpCloudLogic;
+using System.Linq;
 
 namespace UpCloudGui
 {
@@ -27,6 +28,7 @@ namespace UpCloudGui
         string pass;
         CRUDManager crud = new CRUDManager();
         Read read = new Read();
+        Login login = new Login();
         public ArtistView()
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace UpCloudGui
         }
         public void ArtistList(string username, string password)
         {
-            var login = new Login();
+
 
             LBArtist.ItemsSource = (List<Artist>)login.GetInfo(username, password);
 
@@ -55,6 +57,7 @@ namespace UpCloudGui
             if (LBArtist.SelectedItem != null)
             {
                 crud.SetSelectedArtist(LBArtist.SelectedItem);
+                BtnAUpdate.Visibility = Visibility.Visible;
                 ArtistFields();
             }
         }
@@ -62,6 +65,7 @@ namespace UpCloudGui
         {
             if (LBSong.SelectedItem != null)
             {
+                BtnSUpdate.Visibility = Visibility.Visible;
                 crud.SetSSelectedSong(LBSong.SelectedItem);
                 SongFields();
             }
@@ -103,19 +107,46 @@ namespace UpCloudGui
 
         private void AddArtist(object sender, RoutedEventArgs e)
         {
-            var mngID = crud.SelectedArtist.ManagerId;
-            crud.CreateArtist(TextName.Text,(int)mngID, TextArtistName.Text, TextSound.Text, TextSpo.Text, TextSocial.Text);
+            var mngID = login.GetID(user, pass);
+            crud.CreateArtist(TextName.Text, (int)mngID, TextArtistName.Text, TextSound.Text, TextSpo.Text, TextSocial.Text);
             this.NavigationService.Navigate(new ArtistView(user, pass));
 
 
         }
-        private void UpdateSong(object sender, RoutedEventArgs e)
+        private void DeleteArtist(object sender, RoutedEventArgs e)
         {
-            var artID = crud.SelectedSong.SongId;
-            crud.UpdateSong(artID, TextSName.Text, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
+            var artistID = crud.SelectedArtist.ArtistId;
+            // var artID = crud.SelectedSong.SongId;
+
+            crud.DeleteArtist((int)artistID);
             this.NavigationService.Navigate(new ArtistView(user, pass));
 
+        }
+        private void UpdateSong(object sender, RoutedEventArgs e)
+        {
+            var artistID = crud.SelectedSong.ArtistId;
+            var artID = crud.SelectedSong.SongId;
+            crud.UpdateSong(artID, TextSName.Text, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
+            //this.NavigationService.Navigate(new ArtistView(user, pass));
+            SongList((int)artistID);
 
+        }
+        private void AddSong(object sender, RoutedEventArgs e)
+        {
+            var artID = crud.SelectedSong.ArtistId;
+            crud.CreateSong(TextSName.Text, (int)artID, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
+            //this.NavigationService.Navigate(new ArtistView(user, pass));
+            SongList((int)artID);
+
+        }
+
+        private void DeleteSong(object sender, RoutedEventArgs e)
+        {
+            var artistID = crud.SelectedSong.ArtistId;
+            var artID = crud.SelectedSong.SongId;
+            crud.DeleteSong(artID);
+            //this.NavigationService.Navigate(new ArtistView(user, pass));
+            SongList((int)artistID);
         }
         private void SongList(int artistID)
         {
