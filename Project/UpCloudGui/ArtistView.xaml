@@ -8,19 +8,75 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="ArtistView">
 
-    <Grid Background="White" HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top">
-        <ListBox x:Name="LBArtist" HorizontalAlignment="Left" Height="314" Margin="168,22,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBArtist_SelectionChanged"/>
-        <Label Content="Name" HorizontalAlignment="Left" Height="43" Margin="400,36,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Artist Name" HorizontalAlignment="Left" Height="43" Margin="400,91,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="SoundCloud" HorizontalAlignment="Left" Height="43" Margin="400,139,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Spotify" HorizontalAlignment="Left" Height="44" Margin="400,198,0,0" VerticalAlignment="Top" Width="104"/>
-        <Label Content="Social" HorizontalAlignment="Left" Height="43" Margin="400,251,0,0" VerticalAlignment="Top" Width="104"/>
-        <TextBox x:Name="TextName" HorizontalAlignment="Left" Height="22" Margin="504,36,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <TextBox x:Name="TextArtistName" HorizontalAlignment="Left" Height="23" Margin="504,91,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <TextBox x:Name="TextSound" HorizontalAlignment="Left" Height="22" Margin="504,150,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <TextBox x:Name="TextSpo" HorizontalAlignment="Left" Height="22" Margin="504,203,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <TextBox x:Name="TextSocial" HorizontalAlignment="Left" Height="22" Margin="504,247,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.509,-0.203"/>
-        <Button Content="Update Details&#xD;&#xA;" HorizontalAlignment="Left" Height="43" Margin="519,293,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click" />
+    <Grid HorizontalAlignment="Center" Width="800" Height="450" VerticalAlignment="Top">
+        <Grid.Background>
+            <LinearGradientBrush >
+                <GradientStop Color="#FF224CA4" Offset="1"/>
+                <GradientStop Color="#FF00CD79" Offset="0"/>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="LBArtist" HorizontalAlignment="Left" Height="211" Margin="171,34,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBArtist_SelectionChanged" Grid.Column="0
+                 "/>
+        <ListBox x:Name="LBSong" HorizontalAlignment="Left" Height="211" Margin="171,34,0,0" VerticalAlignment="Top" Width="207" SelectionChanged="LBSong_SelectionChanged" Grid.Column="0
+                 " Visibility="Hidden"/>
+        <StackPanel Grid.Column="1" Margin="30,69,170,112" x:Name="AFields">
+            <TextBox x:Name="TextName" Height="30" TextWrapping="Wrap" Width="132" RenderTransformOrigin="0.509,-0.203" Text="Name"/>
+            <TextBox x:Name="TextArtistName" Height="30" Text="Artist Name" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSound" Height="30" Text="Soundcloud Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSpo" Height="30" Text="Spotify Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSocial" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" />
+            <StackPanel Orientation="Horizontal" Height="166">
+                <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,19.5" />
+                <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+     Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Songs" Width="88" Margin="22,0,0,19.7" Click="Song_Click" x:Name="BtnSongs"/>
+
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Name="LArtist">
+            <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Add" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
+            <Button Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Delete" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Name="LSongs" Visibility="Hidden">
+            <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Adds" Width="88" Margin="171,277,0,141" HorizontalAlignment="Left" />
+            <Button Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Deletes" Width="88" Margin="22,135.6,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="30,69,170,112" x:Name="SFields" Visibility="Hidden">
+            <TextBox x:Name="TextSName" Height="30" TextWrapping="Wrap" Width="132" RenderTransformOrigin="0.509,-0.203" Text="Name"/>
+            <TextBox x:Name="TextSGenre" Height="30" Text="Artist Name" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSSound" Height="30" Text="Soundcloud Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSSpo" Height="30" Text="Spotify Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSFile" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" />
+            <Label x:Name="TextSStatus" Height="30" Content="Status"  Width="133" RenderTransformOrigin="0.509,-0.203" IsEnabled="True"/>
+            <StackPanel Orientation="Horizontal" Height="166">
+                <Button
+            Foreground="White"
+    Style="{StaticResource MaterialDesignFlatButton}"
+    Click="Button_Click" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Update" Width="88" Margin="0,0,0,80" />
+
+
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
 </Page>

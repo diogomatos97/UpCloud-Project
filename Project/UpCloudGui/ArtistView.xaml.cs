@@ -1,6 +1,7 @@
 ﻿using Project;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -25,6 +26,7 @@ namespace UpCloudGui
         string user;
         string pass;
         CRUDManager crud = new CRUDManager();
+        Read read = new Read();
         public ArtistView()
         {
             InitializeComponent();
@@ -47,12 +49,21 @@ namespace UpCloudGui
 
         }
 
+
         private void LBArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (LBArtist.SelectedItem != null)
             {
                 crud.SetSelectedArtist(LBArtist.SelectedItem);
                 ArtistFields();
+            }
+        }
+        private void LBSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LBArtist.SelectedItem != null)
+            {
+                crud.SetSSelectedSong(LBArtist.SelectedItem);
+                SongFields();
             }
         }
         private void ArtistFields()
@@ -67,6 +78,19 @@ namespace UpCloudGui
 
             }
         }
+        private void SongFields()
+        {
+            if (crud.SelectedSong != null)
+            {
+                TextSName.Text = crud.SelectedSong.Name;
+                TextSGenre.Text = crud.SelectedSong.Genre;
+                TextSSound.Text = crud.SelectedSong.SoundcloudUrl;
+                TextSSpo.Text = crud.SelectedSong.SpotifyUrl;
+                TextSFile.Text = crud.SelectedSong.SongFile;
+                TextSStatus.Content = crud.SelectedSong.Status;
+
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -76,6 +100,25 @@ namespace UpCloudGui
 
 
         }
+
+        private void SongList(int artistID)
+        {
+            LBSong.ItemsSource = (List<Song>)read.RetrieveSongs(artistID);
+
+
+        }
+        private void Song_Click(object sender, RoutedEventArgs e)
+        {
+            LArtist.Visibility = Visibility.Hidden;
+            LSongs.Visibility = Visibility.Visible;
+            BtnSongs.Visibility = Visibility.Hidden;
+            if (crud.SelectedArtist != null)
+            {
+                int artistID = crud.SelectedArtist.ArtistId
+                   SongList(artistID);
+            }
+        }
+
     }
 
 
