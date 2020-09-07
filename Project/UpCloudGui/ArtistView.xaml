@@ -65,7 +65,7 @@
 
         <StackPanel Grid.Column="1" Margin="30,69,170,112" x:Name="SFields" Visibility="Hidden">
             <TextBox x:Name="TextSName" Height="30" TextWrapping="Wrap" Width="132" RenderTransformOrigin="0.509,-0.203" Text="Name"/>
-            <TextBox x:Name="TextSGenre" Height="30" Text="Artist Name" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
+            <TextBox x:Name="TextSGenre" Height="30" Text="Genre" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSound" Height="30" Text="Soundcloud Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSSpo" Height="30" Text="Spotify Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203"/>
             <TextBox x:Name="TextSFile" Height="30" Text="Social Link" TextWrapping="Wrap" Width="133" RenderTransformOrigin="0.509,-0.203" />

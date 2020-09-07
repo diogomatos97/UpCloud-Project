@@ -26,6 +26,7 @@ namespace UpCloudGui
     {
         string user;
         string pass;
+        int IndependentArtistID;
         CRUDManager crud = new CRUDManager();
         Read read = new Read();
         Login login = new Login();
@@ -41,6 +42,27 @@ namespace UpCloudGui
             ArtistList(username, password);
             user = username;
             pass = password;
+        }
+        public ArtistView(string username, string password, int independent)
+        {
+
+            InitializeComponent();
+            IndependentArtistID = independent;
+            user = username;
+            pass = password;
+            LBArtist.Visibility = Visibility.Hidden;
+            LBSong.Visibility = Visibility.Visible;
+            LArtist.Visibility = Visibility.Hidden;
+            LSongs.Visibility = Visibility.Visible;
+            BtnSongs.Visibility = Visibility.Hidden;
+            AFields.Visibility = Visibility.Hidden;
+            SFields.Visibility = Visibility.Visible;
+            BtnLogOut.Visibility = Visibility.Hidden;
+            BtnHomeArtist.Visibility = Visibility.Visible;
+
+
+            SongList(independent);
+
         }
         public void ArtistList(string username, string password)
         {
@@ -133,7 +155,16 @@ namespace UpCloudGui
         }
         private void AddSong(object sender, RoutedEventArgs e)
         {
-            var artID = crud.SelectedArtist.ArtistId;
+            int artID;
+            if (crud.SelectedArtist == null)
+            {
+                artID = IndependentArtistID;
+
+            }
+            else
+            {
+                artID = crud.SelectedArtist.ArtistId;
+            }
             crud.CreateSong(TextSName.Text, (int)artID, TextSGenre.Text, TextSSound.Text, TextSSpo.Text, TextSFile.Text);
             //this.NavigationService.Navigate(new ArtistView(user, pass));
             SongList((int)artID);
@@ -150,6 +181,11 @@ namespace UpCloudGui
         }
         private void SongList(int artistID)
         {
+            if (artistID == IndependentArtistID)
+            {
+                BtnHomeArtist.Visibility = Visibility.Hidden;
+                BtnLogOut.Visibility = Visibility.Visible;
+            }
             LBSong.ItemsSource = (List<Song>)read.RetrieveSongs(artistID);
 
 

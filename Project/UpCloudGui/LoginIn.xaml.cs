@@ -29,19 +29,27 @@ namespace UpCloudGui
 
 
 
-            string username = "diogo97";
-            //string username = uName.Text.Trim();
-            string password = "diogo97";
-            //string password = pass.SecurePassword.ToString();
+            //string username = "test1";
+            string username = uName.Text.Trim();
+            // string password = "test1";
+            string password = pass.Password.ToString();
 
             var login = new Login();
+            var name = login.GetName(username, password);
+            var ID = login.IsIndependent(name);
+            if (ID > 0)
+            {
+                ArtistView artistView1 = new ArtistView(username, password, ID);
+                this.NavigationService.Navigate(artistView1);
+            }
+            else
+            {
+                login.Exists(username, password);
+                ArtistView artistView = new ArtistView(username, password);
+                this.NavigationService.Navigate(artistView);
+            }
 
-            login.Exists(username, password);
-            ArtistView artistView = new ArtistView(username, password);
-            this.NavigationService.Navigate(artistView);
-
-
-            MessageBox.Show("Details are Incorrect!");
+            // MessageBox.Show("Details are Incorrect!");
 
 
         }

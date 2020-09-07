@@ -94,6 +94,27 @@ namespace UpCloudLogic
 
         }
 
+        public string GetName(string username, string password)
+        {
+            using (var db = new ProjectContext())
+            {
+
+                bool status = LoginCheck(username, password);
+
+                if (status == true)
+                {
+                    var getInfo = db.Manager.Where(c => c.Username == username.ToString() && c.Password == password.ToString()).FirstOrDefault();
+                    return getInfo.Name;
+                }
+
+                else
+                {
+                    throw new Exception("The details provided are not correct!");
+                }
+
+
+            }
+        }
         public void Exists(string username, string password)
         {
             using (var db = new ProjectContext())
