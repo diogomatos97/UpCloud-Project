@@ -5,6 +5,8 @@
 
 [Sprint 3](#sprint-3)
 
+[Sprint 4](#sprint-4)
+
 ### Sprint 1
 
 #### Goals
@@ -90,3 +92,32 @@ As to improve on the following sprints, there are no new subjects I need to impr
 ##### End of Sprint
 
 ![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint3pm.PNG)
+
+
+### Sprint 4
+
+#### Goals
+
+The goal for this sprint is to continue developing the user interface for the WPF application.
+
+#### Review
+
+For this sprint, I have remained with the 2 last user stories on my sprint backlog, as both are related to the user interface, making it only able to complete once the UI has been developed. During this sprint I have also moved on user story regarding the artist list, as the interface is now returning and updating the list of artists for a manager.
+The Blocker for this sprint was the lack of knowledge on visual controls to create a user interface, making the development a trial and error situation.
+
+
+
+#### Retrospective
+
+As to improve on the following sprints I intend to focus on more on implementing the MVP DOD instead of focusing on the visuals of the User Interface.
+
+#### Sprint Breakdown
+
+##### Start of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint2pm.PNG)
+
+##### End of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint3pm.PNG)
+
