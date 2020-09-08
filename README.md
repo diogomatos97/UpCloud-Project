@@ -11,6 +11,8 @@
 
 [Sprint 5](#sprint-5)
 
+[Project Retrospective](#Project-Retrospective)
+
 
 
 ### Sprint 1
@@ -80,14 +82,14 @@ The goal for this sprint is to finish creating the unit tests for the CRUD funct
 
 #### Review
 
-For this sprint, I have moved 2 user stories from the review tab to done, as all the acceptance criteria have been met and the tests have passed. During this sprint, I also started to develop a simple user interface to do manual testing on the login functionalities, and developing the pages where the content is shown, as to see if everything is working. Later on the day, I started to change the User Interface desing, as so it looks more appealing to the user.
+For this sprint, I have moved 2 user stories from the review tab to done, as all the acceptance criteria have been met and the tests have passed. During this sprint, I also started to develop a simple user interface to do manual testing on the login functionalities, and developing the pages where the content is shown, as to see if everything is working. Later on the day, I started to change the User Interface design, as so it looks more appealing to the user.
 Regarding this sprint, I faced similar blockers to the pervious one as, when testing the entity framework, tests would sometimes not pass due to update conflicts. I have also not been able to get passing tests on my update functionalities as, although when manual tested the code works, the code does not seem to fetch the updated data when under tests.
 
 
 
 #### Retrospective
 
-As to improve on the following sprints, there are no new subjects I need to improve or approach in a different method, as this sprint was similar to the previous one. This means that the work done has beem almost identical, therefore no new problems have surfaced.
+As to improve on the following sprints, there are no new subjects I need to improve or approach in a different method, as this sprint was similar to the previous one. This means that the work done has been almost identical, therefore no new problems have surfaced.
 
 #### Sprint Breakdown
 
@@ -152,4 +154,14 @@ During this last sprint, I have appreciated how I have planned the last 2 sprint
 ##### End of Sprint
 
 ![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint5pm.PNG)
+
+
+
+### Project Retrospective
+
+The initial goal for this project was to develop a 3 tier application that made music management easier. Regarding the project development process, there are a few points of the approach that deserve appraise and other that could be improved. The main point that has shown to be successful was the idea of creating a business logic diagram so I would have a base to build the program logic upon. In addition, this allowed me to focus on logic development, as it was important for me to have a starting point of development, which kept me with high motivation to keep developing the application. This also applied to the User Interface, as when blocked, my approach was to start sketching on what I would like to see on an application of this type. 
+
+The point to improve on future projects is to take into account the Unit test part of software development. As specified on my sprint review, when encountered with testing, I was not able to remain calm and ended up creating a stressful environment. This was due to some functionalities not being able to pass the tests, although working when manual tested. Also, as the program logic was already created, it made it harder to change the logic as to make the tests pass, since it could break the existing code. As to improve, I would advise myself to perform unit tests in parallel with the logic development, as it would be easier to modify and adapt the code.
+
+Overall, this project allowed me to develop my C# Skills, both on backend and frontend.
 
