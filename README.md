@@ -1,4 +1,4 @@
-# UpCloud Development 
+
 <img src="https://github.com/diogomatos97/Project/blob/WIP/images/85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png" style="zoom: 150%;" />
 
 [Sprint 1](#sprint-1)
