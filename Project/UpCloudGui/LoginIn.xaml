@@ -64,5 +64,6 @@
     Click="Button_Click"
     Margin="10,0,206,0" Grid.Row="1" Opacity="0.8"  BorderThickness="1" BorderBrush="White" Cursor="Hand" Content="Login" />
         </StackPanel>
+        <Image Margin="196,37,196,0" Stretch="Uniform" Source="85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png" Opacity="0.6" VerticalAlignment="Top" Height="101" Grid.RowSpan="2" IsEnabled="False" RenderTransformOrigin="0.512,0.607"/>
     </Grid>
 </Page>

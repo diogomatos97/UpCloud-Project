@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="1.2.6" />
     <PackageReference Include="MaterialDesignThemes" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
@@ -15,6 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Project\Project.csproj" />
     <ProjectReference Include="..\UpCloudLogic\UpCloudLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudLogic", "UpCloudLogi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudGui", "UpCloudGui\UpCloudGui.csproj", "{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpCloudLogic_Tests", "UpCloudLogic_Tests\UpCloudLogic_Tests.csproj", "{54236060-6F25-4327-A4D9-02DF52914B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudLogic_Tests", "UpCloudLogic_Tests\UpCloudLogic_Tests.csproj", "{54236060-6F25-4327-A4D9-02DF52914B66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{72395330-E97B-4390-B87F-FBC5B8793D35}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png = ..\..\..\..\Downloads\85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
