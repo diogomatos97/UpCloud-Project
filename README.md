@@ -1,4 +1,6 @@
 # UpCloud Development 
+<img src="C:\Users\Diogo\Documents\GitHub\Project\images\85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png" style="zoom: 150%;" />
+
 [Sprint 1](#sprint-1)
 
 [Sprint 2](#sprint-2)
@@ -6,6 +8,10 @@
 [Sprint 3](#sprint-3)
 
 [Sprint 4](#sprint-4)
+
+[Sprint 5](#sprint-5)
+
+
 
 ### Sprint 1
 
@@ -120,4 +126,30 @@ As to improve on the following sprints I intend to focus on more on implementing
 ##### End of Sprint
 
 ![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint3pm.PNG)
+
+
+
+### Sprint 5
+
+#### Goals
+
+The goal for this sprint is to complete the Minimum Viable Product Definition of Done, meaning that all the requirements to have a working application have been completed and met.
+
+#### Review
+
+For this sprint, I have sent the last 2 user stories to the Done tab, as the all user interface controls have been added and the applications has been manually tested. In this sprint I did not encounter any blockers as all I had planned for this sprint was to clean the user interface and add a media element to play an artist song, where the code was based on previous projects (Radio Project). 
+
+#### Retrospective
+
+During this last sprint, I have appreciated how I have planned the last 2 sprints, as I was able to have an early focus on the logic and interface design. Once the initial points were achieved, I was then able to just add to what I add, both on the logic, for additional methods that were needed to present the functionality, and on the user interface, where once the initial design was done, I was able to build upon it and slightly make changes.
+
+#### Sprint Breakdown
+
+##### Start of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint5am.PNG)
+
+##### End of Sprint
+
+![](https://github.com/diogomatos97/Project/blob/WIP/images/sprint5pm.PNG)
 
