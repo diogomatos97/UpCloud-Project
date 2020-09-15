@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Project\Project.csproj", "{33ADA625-7DE5-4366-8E51-166823C37925}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudLogic", "UpCloudLogic\UpCloudLogic.csproj", "{C99F9001-CB06-4223-B74D-51511EDDAB54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudGui", "UpCloudGui\UpCloudGui.csproj", "{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpCloudLogic_Tests", "UpCloudLogic_Tests\UpCloudLogic_Tests.csproj", "{54236060-6F25-4327-A4D9-02DF52914B66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{72395330-E97B-4390-B87F-FBC5B8793D35}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png = ..\..\..\..\Downloads\85b65f62-63ca-44d6-b8cd-4315d8805817_200x200.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33ADA625-7DE5-4366-8E51-166823C37925}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33ADA625-7DE5-4366-8E51-166823C37925}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33ADA625-7DE5-4366-8E51-166823C37925}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33ADA625-7DE5-4366-8E51-166823C37925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C99F9001-CB06-4223-B74D-51511EDDAB54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2852CB7B-1D41-47B9-9CB1-BAB8A8233B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54236060-6F25-4327-A4D9-02DF52914B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54236060-6F25-4327-A4D9-02DF52914B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54236060-6F25-4327-A4D9-02DF52914B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54236060-6F25-4327-A4D9-02DF52914B66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4375A5E0-DC2B-407A-A1F1-DFC234D8AF73}
+	EndGlobalSection
+EndGlobal
